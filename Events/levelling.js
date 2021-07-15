@@ -2,7 +2,7 @@ const Levels = require('discord-xp');
 
 const Discord = require('discord.js');
 
-const { prefix } = require('../Configurations/config.json');
+const { prefix } = require('../Configurations/Config.json');
 
 Levels.setURL(process.env.Scordmongouri);
 
