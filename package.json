@@ -1,0 +1,26 @@
+{
+  "name": "scord",
+  "version": "1.0.0",
+  "description": "Scord The Discord Bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ."
+  },
+  "author": "SC",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bad-words": "^3.0.4",
+    "canvacord": "^5.2.0",
+    "chalk": "^4.1.1",
+    "color-thief-node": "^1.0.4",
+    "discord-xp": "^1.1.14",
+    "discord.js": "^12.5.3",
+    "dotenv": "^8.2.0",
+    "erela.js": "^2.3.3",
+    "moment": "^2.29.1",
+    "parse-ms": "^3.0.0",
+    "rgb2hex": "^0.2.5"
+  }
+}

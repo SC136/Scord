@@ -1,0 +1,23 @@
+{
+	"cross": "<:BlurpleXCross:830844721789927434>",
+	"owner": "<:DiscordOwner:834053792776323102>",
+	"online": "<:DiscordOnline:834053778054971412>",
+	"idle": "<:DiscordIdle:834053715378962463>",
+	"dnd": "<:DiscordDND:834053685553528852>",
+	"offline": "<:DiscordInvisible:834053742596849704>",
+	"ping": "<:DiscordPing:822737333639315476>",
+	"partner": "<:DiscordPartner:810538029114195999>",
+	"members": "<:Members:840907711738937365>",
+	"bot": "<:DiscordBot:840908938673127494>",
+	"id": "<:DiscordID:840916018963939328>",
+	"verify": "<:DiscordVerified:840915980805079080>",
+	"security": "<:VerificationIcon:840983290919125052>",
+	"shield": "<:DiscordShield:841238289881104424>",
+	"system": "<:DiscordSystem:841238264744902667>",
+	"name": "<:DiscordName:841240677156519957>",
+	"voice": "<:DiscordVoice:841240701903437824>",
+	"role": "<:DiscordRole:865067586999025695>",
+	"rules": "<:DiscordRules:865067584868712558>",
+	"region": "<:RegionIcon:865078461680582696>",
+	"timer": "<:DiscordTimer:865067588530733098>"
+}
