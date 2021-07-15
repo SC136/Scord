@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 
-const { prefix } = require(process.cwd() + '/Configurations/config.json');
+const { prefix } = require('../..//Configurations/Config.json');
 
 const { version } = require(process.cwd() + '/package.json');
 
