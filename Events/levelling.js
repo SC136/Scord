@@ -14,7 +14,7 @@ module.exports = {
 
 		if (message.author.bot) return;
 
-		const randomAmountOfXp = Math.floor(Math.random() * 29) + 1;
+		const randomAmountOfXp = Math.floor(Math.random() * 9) + 1;
 
 		const hasLeveledUp = await Levels.appendXp(message.author.id, message.guild.id, randomAmountOfXp);
 
