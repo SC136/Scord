@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 
-const Config = require('../Configurations/config.json');
+const Config = require('../Configurations/Config.json');
 
 module.exports = {
 	name: 'guildCreate',
