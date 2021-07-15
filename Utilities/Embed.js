@@ -1,6 +1,6 @@
 const Utility = require('./utility.json');
 
-const Config = require('../Configurations/config.json');
+const Config = require('../Configurations/Config.json');
 
 module.exports = function (Discord) {
     return new Discord.MessageEmbed()
