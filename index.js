@@ -4,7 +4,7 @@ const fs = require('fs');
 
 const Discord = require('discord.js');
 
-const { prefix, color, owner, logchannelid } = require(process.cwd() + '/Configurations/config.json');
+const { prefix, color, owner, logchannelid } = require('./Configurations/Config.json');
 
 const Utility = require('./Utilities/utility.json');
 
