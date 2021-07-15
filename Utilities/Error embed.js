@@ -1,6 +1,6 @@
 const Utility = require('./utility.json');
 
-const Config = require('../Configurations/config.json');
+const Config = require('../Configurations/Config.json');
 
 const Emoji = require('./emojis.json');
 
