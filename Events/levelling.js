@@ -35,13 +35,13 @@ module.exports = {
 			.setFooter(`For ${message.author.tag} | Type '${prefix}level' or '${prefix}rank' | ©️ Scord`)
 			.setColor(client.color);
 
-			if (!data) return message.reply(`${message.author.id}`, LevelUpEmbed)
+			if (!data) return message.reply(`${message.author}`, LevelUpEmbed)
 
 			const channel = message.guild.channels.cache.get(data.Channel)
 
-			if (!channel || channel === null) return message.reply(`${message.author.id}`, LevelUpEmbed)
+			if (!channel || channel === null) return message.reply(`${message.author}`, LevelUpEmbed)
 				
-			channel.send(`${message.author.id}`, LevelUpEmbed)
+			channel.send(`${message.author}`, LevelUpEmbed)
 		}
 	},
 
