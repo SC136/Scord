@@ -26,7 +26,7 @@ module.exports = {
 
     if (user.presence.activities.length === 0 || status.name !== "Spotify" && status.type !== "LISTENING") {
 
-      return message.reply(client.error.setDescription('```Error! user is not listening to spotify!```'));
+      return message.reply(client.error.send('User is not listening to spotify!'));
 
     }
 

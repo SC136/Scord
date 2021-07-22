@@ -31,7 +31,7 @@ module.exports = {
 			const LevelUpEmbed = new Discord.MessageEmbed()
 
 			.setTitle('Leveled up!')
-			.setDescription(`\`\`\`apache\nHey ${message.author.tag}, congratulations!\nYou have just leveled up to ${user.level}\`\`\``)
+			.setDescription(`\`\`\`apache\nHey ${message.author.tag}, congratulations!\nYou have just leveled up to level ▸ ${user.level}\`\`\``)
 			.setFooter(`For ${message.author.tag} | Type '${prefix}level' or '${prefix}rank' | ©️ Scord`)
 			.setColor(client.color);
 

@@ -11,8 +11,6 @@ module.exports = {
 
 		let Hexcolor = `#${Color}`;
 
-		message.channel.startTyping();
-
 		const Colorcanvas = Canvas.createCanvas(100, 100);
 		const ctx = Colorcanvas.getContext("2d");
 
@@ -30,8 +28,6 @@ module.exports = {
 			.setImage('attachment://Colorimage.png')
 			.setFooter(`Requested by ${message.author.username}`, message.author.avatarURL())
 			.setColor(client.color);
-
-		message.channel.stopTyping();
 
 		message.reply(Colorembed);
 	},
