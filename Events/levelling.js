@@ -9,7 +9,9 @@ const LevelUpSchema = require('../Models/LevelUp')
 Levels.setURL(process.env.Scordmongouri);
 
 module.exports = {
+
 	name: 'message',
+
 	async execute(message, client) {
 
 		let data = await LevelUpSchema.findOne({ Guild: message.guild.id }).exec()
@@ -23,10 +25,24 @@ module.exports = {
 		const hasLeveledUp = await Levels.appendXp(message.author.id, message.guild.id, randomAmountOfXp);
 
 		if (hasLeveledUp) {
-			if (!data) return message.reply('ok bruh')
+
+			const user = await Levels.fetch(message.author.id, message.guild.id);
+
+			const LevelUpEmbed = new Discord.MessageEmbed()
+
+			.setTitle('Leveled up!')
+			.setDescription(`\`\`\`apache\nHey ${message.author.tag}, congratulations!\nYou have just leveled up to ${user.level}\`\`\``)
+			.setFooter(`For ${message.author.tag} | Type '${prefix}level' or '${prefix}rank' | ©️ Scord`)
+			.setColor(client.color);
+
+			if (!data) return message.reply(LevelUpEmbed)
+
 			const channel = message.guild.channels.cache.get(data.Channel)
-			if (!channel || channel === null) return message.reply('ok yes')
-			channel.send('it worked!')
+
+			if (!channel || channel === null) return message.reply(LevelUpEmbed)
+				
+			channel.send(LevelUpEmbed)
 		}
-	}
+	},
+
 };
