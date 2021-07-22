@@ -9,7 +9,7 @@ module.exports = {
     usage: '<#Channel>',
     guildOnly: true,
 
-    async execute(clent, message, args) {
+    async execute(client, message, args) {
 
         const channel = message.mentions.channels.first();
 
