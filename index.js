@@ -112,14 +112,7 @@ client.on('message', message => {
 	if (command.permissions) {
 		const authorPerms = message.channel.permissionsFor(message.author);
 		if (!authorPerms || !authorPerms.has(command.permissions)) {
-			return message.reply(
-				new Discord.MessageEmbed()
-					.setTitle('`You can not do this!`')
-					.setDescription('```Wumpus doesn\'t allow you to use this command!```')
-					.setFooter('©️ Scord', client.user.avatarURL())
-					.setColor(client.color)
-					.setTimestamp()
-			);
+			return message.reply(client.error.send('You don\'t have the permission to use this command!'));
 		}
 	}
 

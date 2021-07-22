@@ -2,6 +2,7 @@ module.exports = {
 
     name: 'ban',
     description: 'Bans a member',
+    permissions: 'BAN_MEMBERS',
     args: true,
     usage: '<@Member> <Optional reason>',
     guildOnly: true,

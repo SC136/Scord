@@ -2,6 +2,7 @@ module.exports = {
 
   name: 'kick',
   description: 'Kicks a member',
+  permissions: 'KICK_MEMBERS',
   args: true,
   usage: '<@Member> <Optional reason>',
   guildOnly: true,
