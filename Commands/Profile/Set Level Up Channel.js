@@ -1,14 +1,19 @@
 const LevelUpSchema = require('../../Models/LevelUp');
 
 module.exports = {
-    name: 'set',
+    
+    name: 'set-level-up-channel',
+    aliases: ['set-lvl-up-channel', 's-lvl-up-chl'],
     description: 'Sets Level Up Channel',
-    ownerOnly: true,
+    args: true,
+    usage: '<#Channel>',
+    guildOnly: true,
 
     async execute(clent, message, args) {
 
         const channel = message.mentions.channels.first();
-        if(!channel) return message.reply(`Which Channel Do You Want To Set The Level Up Message To Be Send?\n**Usage:-** \`!set level #ChannelName\``)
+
+        if(!channel) return message.reply(client.error.send('You need to mention a valid channel to set level up messages!'))
 
         let data;
         data = await LevelUpSchema.findOne({
@@ -27,6 +32,8 @@ module.exports = {
                 Channel: channel.id
             })
         }
-        message.channel.send(`Level Up Message Channel Set To ${channel}`)
-    }
-}
+        message.channel.send(`Level up messages will now be sent in ${channel}`);
+
+    },
+
+};

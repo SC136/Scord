@@ -4,7 +4,7 @@ const Levels = require('discord-xp');
 
 module.exports = {
 	name: 'leaderboard',
-	aliases: 'lb',
+	aliases: ['lb'],
 	guildOnly: true,
 	async execute(client, message) {
 
