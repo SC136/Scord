@@ -5,7 +5,7 @@ module.exports = {
     name: 'set-level-up-channel',
     aliases: ['set-lvl-up-channel', 's-lvl-up-chl'],
     description: 'Sets Level Up Channel',
-    permissions: 'MANAGE_SERVER',
+    permissions: 'MANAGE_GUILD',
     args: true,
     usage: '<#Channel>',
     guildOnly: true,
