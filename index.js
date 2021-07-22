@@ -18,9 +18,9 @@ client.cooldowns = new Discord.Collection();
 
 client.manager = require('./Music/Manager')(client);
 
-client.embed = require('./Utilities/Embed')(Discord);
+client.embed = require('./Utilities/Embed');
 
-client.error = require('./Utilities/Error embed')(Discord);
+client.error = require('./Utilities/Error');
 
 client.color = color;
 
@@ -30,8 +30,14 @@ client.name = Utility.name;
 
 client.url = Utility.url;
 
-//mad
+client.owner = owner;
+
+const MainError = require('./Utilities/Error embed')(Discord);
+
 client.discord = Discord;
+
+const mongo = require('./Utilities/mongo');
+mongo.init();
 
 const commandFolders = fs.readdirSync('./Commands');
 
@@ -62,11 +68,17 @@ for (const file of eventFiles) {
 
 client.on('message', message => {
 
-	if (!message.content.startsWith(prefix) || message.author.bot) return;
-
 	const args = message.content.slice(prefix.length).trim().split(/ +/);
 
-	const member = message.mentions.members.first() || message.guild.members.cache.find(member => member.user.username.toLowerCase() === args.join(" ").toLowerCase()) || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(member => member.displayName.toLowerCase() === args.join(" ").toLowerCase()) || message.member;
+	let member;
+
+	if (message.channel.type === 'dm') {
+		member = message.author;
+	} else {
+		member = message.mentions.members.first() || message.guild.members.cache.find(member => member.user.username.toLowerCase() === args.join(" ").toLowerCase()) || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(member => member.displayName.toLowerCase() === args.join(" ").toLowerCase()) || message.member;
+	};
+
+	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
 	const commandName = args.shift().toLowerCase();
 
@@ -119,7 +131,7 @@ client.on('message', message => {
 			Reply += `\n\`\`\`diff\n+ The proper usage would be ▸ ${prefix}${command.name} ${command.usage}\`\`\``;
 		}
 
-		return message.channel.send(message.author, client.error.setDescription(Reply));
+		return message.channel.send(message.author, MainError.setDescription(Reply));
 	}
 
 	const { cooldowns } = client;
@@ -155,15 +167,6 @@ client.on('message', message => {
 
 		command.execute(client, message, args, member, prefix);
 
-		// const logchannel = client.channels.cache.get(logchannelid);
-		// logchannel.send(
-		// 	new Discord.MessageEmbed()
-		// 		.setTitle('Command used')
-		// 		.setDescription(`${message.author.tag} used ${command.name} in ${message.guild.name}!`)
-		// 		.setFooter('©️ Scord')
-		// 		.setColor(client.color)
-		// 		.setTimestamp()
-		// );
 	} catch (error) {
 
 		console.error(error);

@@ -34,7 +34,9 @@ function genRandomHex() {
 
 function errorTest(error) {
         return {
-            title: error,
+            embed: {
+                title: error
+            },
         }
 }
 

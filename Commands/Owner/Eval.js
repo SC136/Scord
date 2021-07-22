@@ -1,4 +1,6 @@
 const { MessageEmbed } = require('discord.js');
+const LevelUpSchema = require('../../Models/LevelUp');
+
 
 module.exports = {
   name: 'eval',

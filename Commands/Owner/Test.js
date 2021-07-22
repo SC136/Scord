@@ -1,11 +1,11 @@
-const bruh = require('../../bruh')
+const bruh = require('../../Utilities/Error.js');
 
 module.exports = {
 	name: 'test',
 	ownerOnly: true,
 	execute(client, message, args) {
 
-		console.log(bruh.errorTest())
+		message.channel.send(client.embed.send(message, '', 'this is description', 'this is footer'))
 
 	},
 };
