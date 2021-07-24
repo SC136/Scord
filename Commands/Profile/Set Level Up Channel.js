@@ -1,7 +1,7 @@
 const LevelUpSchema = require('../../Models/LevelUp');
 
 module.exports = {
-    
+
     name: 'set-level-up-channel',
     aliases: ['set-lvl-up-channel', 's-lvl-up-chl'],
     description: 'Sets Level Up Channel',
@@ -14,7 +14,7 @@ module.exports = {
 
         const channel = message.mentions.channels.first();
 
-        if(!channel) return message.reply(client.error.send('You need to mention a valid channel to set level up messages!'))
+        if (!channel) return message.reply(client.error.send('You need to mention a valid channel to set level up messages!'))
 
         let data;
         data = await LevelUpSchema.findOne({

@@ -46,11 +46,11 @@ module.exports = {
     if (Reason.length > 1024) Reason = Reason.slice(0, 1021) + '...';
 
     await member.send(`**${message.author.tag}** kicked you from ${message.guild.name}!\n**Reason**: ${Reason}`)
-    .catch(() => null);
+      .catch(() => null);
 
     return member.kick(`Scord Kick Command • ${message.author.tag} Kicked  ${member.user.tag} • Reason ▸ ${Reason}`)
-    .then(_member => message.reply(client.embed.send(message, 'Kick command', `apache\n${_member.user.tag} was successfully kicked!`, `Kicked by ${message.author.tag}`)))
-    .catch(() => message.reply(client.error.send('I was unable to kick that member...')));
+      .then(_member => message.reply(client.embed.send(message, 'Kick command', `apache\n${_member.user.tag} was successfully kicked!`, `Kicked by ${message.author.tag}`)))
+      .catch(() => message.reply(client.error.send('I was unable to kick that member...')));
 
   },
 

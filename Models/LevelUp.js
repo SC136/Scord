@@ -5,4 +5,4 @@ const Schema = new mongo.Schema({
     Channel: String,
 })
 
-module.exports = mongo.model("LevelUp", Schema)
+module.exports = mongo.model("LevelUp", Schema);

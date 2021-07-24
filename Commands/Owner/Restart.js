@@ -5,9 +5,9 @@ module.exports = {
 	execute(client, message) {
 
 		message.channel
-		.send('_Restarting..._')
-		.then(message => client.destroy())
-		.then(() => client.login(process.env.Scordtoken));
+			.send('_Restarting..._')
+			.then(message => client.destroy())
+			.then(() => client.login(process.env.Scordtoken));
 		message.channel.send('**Restarted!**');
 	},
 };

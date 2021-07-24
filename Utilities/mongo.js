@@ -11,14 +11,14 @@ module.exports = {
         mongo.connect(process.env.Scordmongouri, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
-            useFindAndModify: false,            
+            useFindAndModify: false,
         })
         mongo.Promise = global.Promise
         // mongo.set('useCreateIndex', true);
 
 
         mongo.connection.on('connected', () => {
-        console.log('Sucessfully Connected To MongoDB')
+            console.log('Sucessfully Connected To MongoDB')
         })
 
         mongo.connection.on('disconnected', () => {

@@ -1,15 +1,15 @@
 module.exports = {
 
-    name: 'ban',
-    description: 'Bans a member',
-    permissions: 'BAN_MEMBERS',
-    args: true,
-    usage: '<@Member> <Optional reason>',
-    guildOnly: true,
-    
-    async execute(client, message, args) {
+  name: 'ban',
+  description: 'Bans a member',
+  permissions: 'BAN_MEMBERS',
+  args: true,
+  usage: '<@Member> <Optional reason>',
+  guildOnly: true,
 
-        const member = message.mentions.members.first() || message.guild.members.cache.find(member => member.user.username.toLowerCase() === args.join(" ").toLowerCase()) || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(member => member.displayName.toLowerCase() === args.join(" ").toLowerCase());
+  async execute(client, message, args) {
+
+    const member = message.mentions.members.first() || message.guild.members.cache.find(member => member.user.username.toLowerCase() === args.join(" ").toLowerCase()) || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(member => member.displayName.toLowerCase() === args.join(" ").toLowerCase());
 
     if (!member) {
       return message.reply(client.error.send('I was unable to find that member, make sure you have the proper id or proper ping\nFor more info ▸ \'!cmd ban\''))
@@ -44,12 +44,12 @@ module.exports = {
       Reason = 'None';
     }
 
-        await member.send(`**${message.author.tag}** banned you from ${message.guild.name}!\n**Reason** ▸ ${Reason || 'Unspecified.'}`)
-            .catch(() => null);
+    await member.send(`**${message.author.tag}** banned you from ${message.guild.name}!\n**Reason** ▸ ${Reason || 'Unspecified.'}`)
+      .catch(() => null);
 
-        return member.ban({ reason: `Scord Ban Command • ${message.author.tag} Banned  ${member.user.tag} • Reason ▸ ${Reason}`})
-            .then(_member => message.reply(client.embed.send(message, 'Ban command', `apache\n${_member.user.tag} was successfully banned!`, `Banned by ${message.author.tag}`)))
-            .catch(() => message.reply(client.error.send('I was unable to ban that member...')));
-    },
+    return member.ban({ reason: `Scord Ban Command • ${message.author.tag} Banned  ${member.user.tag} • Reason ▸ ${Reason}` })
+      .then(_member => message.reply(client.embed.send(message, 'Ban command', `apache\n${_member.user.tag} was successfully banned!`, `Banned by ${message.author.tag}`)))
+      .catch(() => message.reply(client.error.send('I was unable to ban that member...')));
+  },
 
 };
