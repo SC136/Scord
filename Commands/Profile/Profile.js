@@ -4,6 +4,8 @@ const Levels = require('discord-xp');
 
 const Utility = require('../../Utilities/utility.json');
 
+const ProfileSchema = require('../../Models/Profile');
+
 module.exports = {
 
 	name: 'profile',
@@ -14,7 +16,15 @@ module.exports = {
 
 		const User = await Levels.fetch(member.user.id, message.guild.id, true);
 
-		if (!User) return message.reply(client.error.setDescription('```Seems like this member doesn\'t have a profile :(```'));
+		if (!User) return message.reply(client.error.send('Seems like this member doesn\'t have a profile yet :('));
+
+		let data = await ProfileSchema.findOne({ User: member.id }).exec()
+		let bio;
+		if (data) {
+			bio = data.Bio;
+		} else {
+			bio = 'Bio not set • Set using `!set-bio`';
+		}
 
 		let Avatar = member.user.avatarURL({ format: 'png', size: 1024, dynamic: true });
 
@@ -24,6 +34,7 @@ module.exports = {
 			.setThumbnail(Avatar)
 			.setDescription('```apache\nHey! here is your awesome profile!```')
 			.addField('Name ▸', `\`\`\`${member.displayName}\`\`\``)
+			.addField('Bio ▸', bio)
 			.addField('Level ▸', `\`\`\`${User.level}\`\`\``, true)
 			.addField('Rank ▸', `\`\`\`${parseInt(User.position)}\`\`\``, true)
 			.addField('XP ▸', `\`\`\`${User.xp}\`\`\``, true)

@@ -4,7 +4,7 @@ const Discord = require('discord.js');
 
 const { prefix } = require('../Configurations/Config.json');
 
-const LevelUpSchema = require('../Models/LevelUp')
+const LevelUpSchema = require('../Models/LevelUp');
 
 Levels.setURL(process.env.Scordmongouri);
 

@@ -5,7 +5,7 @@ module.exports = {
 	ownerOnly: true,
 	execute(client, message, args) {
 
-		message.channel.send(client.embed.send(message, '', 'this is description', 'this is footer'))
+		message.channel.send(client.embed.send(message, 'test', args))
 
 	},
 };
