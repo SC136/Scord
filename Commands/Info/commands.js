@@ -29,14 +29,14 @@ module.exports = {
 
           let name = file.name.replace(".js", "");
 
-          return `${name}`;
+          return `• ${name}`;
         });
 
         let data = new Object();
 
         data = {
           name: dir.toUpperCase(),
-          value: `\`\`\`${cmds.length === 0 ? "In progress" : cmds.join(" • ")}\`\`\``,
+          value: `\`\`\`${cmds.length === 0 ? "In progress" : cmds.join("\n")}\`\`\``,
           inline: true
         };
 

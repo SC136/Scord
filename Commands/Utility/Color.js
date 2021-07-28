@@ -3,8 +3,11 @@ const Discord = require('discord.js');
 const Canvas = require('canvas');
 
 module.exports = {
+
 	name: 'color',
-	aliases: 'clr',
+	aliases: ['clr'],
+	description: 'Shows a random color or the give color',
+
 	async execute(client, message, [hex = '']) {
 
 		var Color = hex.match(/[0-9a-f]{6}/) || Math.floor(Math.random() * 16777215).toString(16);
@@ -30,5 +33,7 @@ module.exports = {
 			.setColor(client.color);
 
 		message.reply(Colorembed);
+
 	},
+
 };

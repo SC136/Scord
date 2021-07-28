@@ -1,6 +1,6 @@
 module.exports = {
 
-	name: 'Purge',
+	name: 'purge',
 	aliases: ['clear', 'c', 'delete-messages', 'bulk-delete'],
 	description: 'Bulk deletes given messages that are newer than two weeks',
 	permissions: 'MANAGE_MESSAGES',
