@@ -1,16 +1,18 @@
 const { MessageEmbed } = require('discord.js');
-const LevelUpSchema = require('../../Models/LevelUp');
-
 
 module.exports = {
+
   name: 'eval',
-  usage: 'eval <code>',
-  description: 'Evaluates the provided code!',
+  usage: '<Code to evaluate>',
+  description: 'Evaluates the provided code',
   ownerOnly: true,
+
   execute(client, message, args, member) {
 
     const input = args.join(' ');
-    if (!input) return message.reply('Please provide code to eval');
+
+    if (!input) return message.reply(client.error.send('Please provide code to eval'));
+
     if (!input.toLowerCase().includes('token')) {
 
       const embed = new MessageEmbed();
@@ -34,7 +36,7 @@ module.exports = {
       message.channel.send(embed);
 
     } else {
-      message.channel.send('Bruh');
+      message.channel.send('Bruhhh');
     }
   }
 };

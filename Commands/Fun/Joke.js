@@ -16,7 +16,7 @@ module.exports = {
 			.then(Res => Res.json())
 			.catch(() => null);
 
-		if (!data) return message.reply('Sorry, it seems something is not right. Try again later :(')
+		if (!data) return message.reply(client.error.send('Sorry, it seems something is not right. Try again later :('))
 
 		const text = '```Here is a nice joke for you :)```';
 

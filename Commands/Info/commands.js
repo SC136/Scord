@@ -7,14 +7,28 @@ const emoji = require('../../Utilities/emojis.json');
 const Utility = require('../../Utilities/utility.json');
 
 module.exports = {
+
   name: 'commands',
   aliases: ['cmd'],
   description: 'Shows all bot commands',
+  usage: '• !cmd <Command name>',
+
   execute(client, message, args, member, prefix) {
 
     if (!args[0]) {
 
       let categories = [];
+
+      const Emojis = {
+
+        Fun: "<:DiscordFun:871669508690022460>",
+        Info: "<:DiscordInfo:870511644709650472>",
+        Moderation: "<:DiscordCertifiedModerator:870285100477214741>",
+        Owner: "<:DiscordOwner:870516633226080306>",
+        Profile: "<:DiscordPencil:870512370093551666>",
+        Utility: "<:DiscordSettings:870510077134651402>"
+
+      };
 
       readdirSync("./Commands/").forEach((dir) => {
         const commands = readdirSync(`./Commands/${dir}/`).filter((file) =>
@@ -34,8 +48,10 @@ module.exports = {
 
         let data = new Object();
 
+        const EmoDirName = `${Emojis[dir]}・${dir}`;
+
         data = {
-          name: dir.toUpperCase(),
+          name: EmoDirName,
           value: `\`\`\`${cmds.length === 0 ? "In progress" : cmds.join("\n")}\`\`\``,
           inline: true
         };
@@ -69,26 +85,31 @@ module.exports = {
         return message.channel.send(embed);
       }
 
+      const Name = command.name ? `${command.name}` : "No name for this command";
+
+      const CmdCap = Name.charAt(0).toUpperCase() + Name.slice(1);
+
       const embed = new MessageEmbed()
-        .setTitle(`\`${command.name ? `${command.name}` : "No name for this command."} command details\``)
+      
+        .setTitle(`\`${CmdCap} command details\``)
         .addField(
           "Command ▸",
           command.name ? `\`\`\`${command.name}\`\`\`` : "No name for this command.",
         )
         .addField(
-          "DESCRIPTION ▸",
+          "Description ▸",
           command.description
             ? `\`\`\`${command.description}\`\`\``
             : '```Description not available```'
         )
         .addField(
-          "ALIASES ▸",
+          "Aliases ▸",
           command.aliases
             ? `\`\`\`${command.aliases.join(" • ")}\`\`\``
             : '```Aliases not available```'
         )
         .addField(
-          "USAGE ▸",
+          "Usage ▸",
           command.usage
             ? `\`\`\`${prefix}${command.name} ${command.usage}\`\`\``
             : `\`\`\`${prefix}${command.name}\`\`\``
@@ -97,8 +118,7 @@ module.exports = {
           `Requested by ${message.author.tag}  •  ©️ Scord`,
           message.author.avatarURL({ format: 'png', size: 1024, dynamic: true })
         )
-        .setColor(client.color)
-        .setTimestamp();
+        .setColor(client.color);
 
       return message.channel.send(embed);
 

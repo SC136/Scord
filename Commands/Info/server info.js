@@ -8,7 +8,7 @@ module.exports = {
 
   name: 'serverinfo',
   aliases: ['guildinfo', 'si'],
-  description: 'Shows information about the current server!',
+  description: 'Shows information about the current server',
   guildOnly: true,
 
   execute(client, message, args, member) {
@@ -16,21 +16,27 @@ module.exports = {
     const server = message.guild;
 
     const verificationLevels = {
+
       NONE: 'None',
       LOW: 'Low',
       MEDIUM: 'Medium',
       HIGH: 'High',
       VERY_HIGH: 'Highest'
+
     };
 
     const notifications = {
+
       ALL: '```All```',
       MENTIONS: '```Mentions```'
+
     };
 
     const truefalse = {
+
       true: 'Yep',
       false: 'Nope'
+
     };
 
     const members = message.guild.members.cache.array();

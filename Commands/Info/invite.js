@@ -19,6 +19,6 @@ module.exports = {
 
 		message.channel.send(inviteembed);
 
-	}
+	},
 
 };

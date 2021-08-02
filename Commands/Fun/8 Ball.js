@@ -7,11 +7,13 @@ const badWords = new Badwords();
 const Utility = require('../../Utilities/utility');
 
 module.exports = {
+
   name: '8ball',
   aliases: ['8-ball', 'eightball', '🎱'],
   description: 'The 🎱ball will answer...',
   args: true,
   usage: '<Stuff to say>',
+
   execute(client, message, args) {
 
     const eightball = [
@@ -41,11 +43,12 @@ module.exports = {
       , 'Really?'
     ];
 
-    if (badWords.isProfane(message.content)) return message.reply(client.error.setDescription('```diff\n- No badwords allowed!```'));
+    if (badWords.isProfane(message.content)) return message.reply(client.error.send('No badwords allowed!'));
 
     const response = eightball[Math.floor(Math.random() * eightball.length)];
 
     const eightballembed = new Discord.MessageEmbed()
+    
       .setAuthor(client.user.username, client.user.avatarURL({ format: 'png', size: 1024 }), Utility.url)
       .setTitle('`8ball command`')
       .setDescription('```apache\nThe 8 Ball will answer you...```')
@@ -58,4 +61,5 @@ module.exports = {
     message.channel.send(eightballembed);
 
   },
+
 };

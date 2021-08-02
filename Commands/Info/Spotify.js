@@ -10,15 +10,13 @@ module.exports = {
 
   name: 'spotify',
   aliases: ['spot'],
+  description: 'Shows the song playing on spotify... • Spotify account must be connected to your discord account*',
+  usage: '• !spotify <Member>',
+  guildOnly: true,
 
-  execute(client, message, args) {
+  execute(client, message, args, member) {
 
-    let user;
-    if (message.mentions.users.first()) {
-      user = message.mentions.users.first();
-    } else {
-      user = message.author;
-    }
+    const user = member.user;
 
     let status;
     if (user.presence.activities.length === 1) status = user.presence.activities[0];
@@ -46,6 +44,7 @@ module.exports = {
       //let time = `${minutes}:${seconds}`;
 
       const card = new Canvacord.Spotify()
+      
         .setAuthor(artist)
         .setAlbum(album)
         .setStartTimestamp(status.timestamps.start)

@@ -30,6 +30,7 @@ module.exports = {
                 Bio: bio
             })
         }
+        
         message.channel.send(client.embed.send(message, 'Set bio', `Your bio successfully set to ▸ \n ${bio}`));
 
     },

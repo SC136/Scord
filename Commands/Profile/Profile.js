@@ -10,6 +10,7 @@ module.exports = {
 
 	name: 'profile',
 	aliases: ['prof'],
+	description: 'Shows your profile',
 	guildOnly: true,
 
 	async execute(client, message, args, member, prefix) {
@@ -45,4 +46,5 @@ module.exports = {
 		message.channel.send(ProfileEmbed);
 
 	},
+	
 };

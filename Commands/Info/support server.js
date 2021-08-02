@@ -1,10 +1,12 @@
 const Discord = require('discord.js');
 
 module.exports = {
+
 	name: 'supportserver',
 	aliases: ['support-server', 'support'],
 	description: 'Get the invite link of the support server for me',
 	cooldown: 10,
+
 	execute(client, message) {
 
 		const serverembed = new Discord.MessageEmbed()
@@ -14,5 +16,6 @@ module.exports = {
 			.setColor(client.color)
 
 		message.channel.send(serverembed);
-	}
+	},
+	
 };

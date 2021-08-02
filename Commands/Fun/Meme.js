@@ -31,7 +31,7 @@ module.exports = {
 
 		} catch (err) {
 
-			Message.reply('There was an error, please try again later : (');
+			Message.reply(Client.error.send('There was an error, please try again later : ('));
 
 		}
 

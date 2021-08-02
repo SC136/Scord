@@ -6,8 +6,7 @@ module.exports = {
 
 	name: 'help',
 	aliases: ['h'],
-	discription: 'Get started with the bot!',
-	cooldown: 5,
+	description: 'Get started with the bot!',
 
 	execute(client, message) {
 

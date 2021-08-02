@@ -29,17 +29,18 @@ module.exports = {
         });
 
         const embed = new Discord.MessageEmbed()
+
           .setTitle('Here are all my categories of commands')
-          .setDescription(
-            `\`\`\`Use '${prefix}categories' followed by a category name to get all the commands inside that category!\nFor example ▸ '${prefix}categories info'.\`\`\``
-          )
+          .setDescription(`\`\`\`Use '${prefix}categories' followed by a category name to get all the commands inside that category!\nFor example ▸ '${prefix}categories info'.\`\`\``)
           .addFields(categories)
           .setFooter(`Requested By ${message.author.username} | ©️ Scord`, client.user.avatarURL())
           .setColor(client.color)
-          .setTimestamp()
+          .setTimestamp();
+
         return message.channel.send(embed);
 
-      })
+      });
+
     } else {
 
       const commands = fs.readdirSync(`./Commands/${args.join(" ")}/`).filter((file) =>

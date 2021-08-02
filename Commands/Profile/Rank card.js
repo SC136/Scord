@@ -13,6 +13,7 @@ module.exports = {
     name: 'rankcard',
     aliases: ['rank-card', 'rnk-crd', 'rnkcrd'],
     description: 'Shows the current level and rank of the user!',
+    guildOnly: true,
 
     async execute(client, message, args) {
 

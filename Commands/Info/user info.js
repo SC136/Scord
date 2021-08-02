@@ -3,10 +3,12 @@ const Discord = require('discord.js');
 const Emoji = require('../../Utilities/emojis.json');
 
 module.exports = {
+
 	name: 'userinfo',
 	aliases: ['memberinfo'],
 	description: 'Displays information about a member',
 	guildOnly: true,
+
 	execute(client, message, args, member, prefix) {
 
 		const user = member.user;
@@ -27,6 +29,7 @@ module.exports = {
 		};
 
     const flags = {
+
       DISCORD_EMPLOYEE: '<:DiscordStaff:810537983514116116>',
       DISCORD_PARTNER: '<:DiscordPartner:810538029114195999>',
       BUGHUNTER_LEVEL_1: '<:BugHunter:810537894246612995>',
@@ -40,6 +43,7 @@ module.exports = {
       SYSTEM: 'System',
       VERIFIED_BOT: '<:VerifiedBot:810535932888743946>',
       VERIFIED_DEVELOPER: '<:VerifiedBotDeveloper:810535327226920992>',
+
     };
 
     const badges = user.flags.toArray();
@@ -47,6 +51,7 @@ module.exports = {
 		const roles = member.roles.cache.map(r => `<@&${r.id}>`).join(' **•** ')
 
 		const Userembed = new Discord.MessageEmbed()
+
 		.setTitle('`Userinfo command`')
 		.setThumbnail(user.avatarURL({ format: 'png', size: 4096, dynamic: true }))
 		.addField('Username ▸', `\`\`\`${user.username}\`\`\``)
@@ -66,4 +71,5 @@ module.exports = {
 		message.channel.send(Userembed);
 
 	},
+	
 };

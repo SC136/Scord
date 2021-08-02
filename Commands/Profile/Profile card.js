@@ -10,8 +10,12 @@ const Canvacord = require('canvacord');
 const Levels = require('discord-xp');
 
 module.exports = {
+
   name: 'profilecard',
   aliases: ['profcar', 'pc'],
+  description: 'Shows your profile card',
+  guildOnly: true,
+
   async execute(client, message, args, member) {
 
     const canvas = createCanvas(446, 610)
@@ -185,4 +189,5 @@ module.exports = {
     });
 
   },
+  
 };
