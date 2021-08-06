@@ -12,6 +12,7 @@ module.exports = {
 
 		const helpembed = new Discord.MessageEmbed()
 
+			.setAuthor(client.name, client.avatar, client.url)
 			.setTitle('`Help command`')
 			.setDescription('```m\nHello there!\nhere  is some help to get u started using me.\nWe will have some fun time!```')
 			.addField('See all my categories ▸', `\`\`\`fix\n${prefix}categories\`\`\``)

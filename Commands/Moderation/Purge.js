@@ -25,7 +25,7 @@ module.exports = {
 		};
 
 		await message.channel.bulkDelete(Amount)
-		.catch(() => message.reply(client.error.send('I was unable to delete the messages!')));
+			.catch(() => message.reply(client.error.send('I was unable to delete the messages!')));
 
 		let amount;
 
@@ -36,11 +36,11 @@ module.exports = {
 		} else {
 
 			amount = `${Amount} message`
-			
+
 		};
 
 		message.channel.send(client.embed.send(message, 'Purge', `Successfully deleted ${amount}!`))
-		.then(m => m.delete({ timeout : 5000 }));
+			.then(m => m.delete({ timeout: 5000 }));
 
 	},
 

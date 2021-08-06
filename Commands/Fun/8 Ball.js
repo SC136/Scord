@@ -4,8 +4,6 @@ const Badwords = require('bad-words');
 
 const badWords = new Badwords();
 
-const Utility = require('../../Utilities/utility');
-
 module.exports = {
 
   name: '8ball',
@@ -41,6 +39,9 @@ module.exports = {
       , 'Why not?'
       , 'Ok, i guess'
       , 'Really?'
+      , 'Wait!, what?!'
+      , 'LOL'
+      , 'IDK'
     ];
 
     if (badWords.isProfane(message.content)) return message.reply(client.error.send('No badwords allowed!'));
@@ -48,8 +49,8 @@ module.exports = {
     const response = eightball[Math.floor(Math.random() * eightball.length)];
 
     const eightballembed = new Discord.MessageEmbed()
-    
-      .setAuthor(client.user.username, client.user.avatarURL({ format: 'png', size: 1024 }), Utility.url)
+
+      .setAuthor(client.name, client.avatar, client.url)
       .setTitle('`8ball command`')
       .setDescription('```apache\nThe 8 Ball will answer you...```')
       .addField('Content ▸', `\`\`\`${args.join(' ')}\`\`\``)

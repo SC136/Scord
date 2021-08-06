@@ -13,9 +13,9 @@ module.exports = {
 
 			.setAuthor(client.name, client.avatar, client.url)
 			.setTitle('`Invite command⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀`')
-			.setDescription('```apache\nHere is the link to invite me!\nSo you can also have me in your server!\nI will be more than happy to join!``` \n ▸ [**Invite link**](https://dsc.gg/scord "Click here to invite me!") \n\n ▸ [**Alternate invite link**](https://dsc.gg/scord "Click here to invite me!")')
+			.setDescription('```apache\nHere is the link to invite me!\nSo you can also have me in your server!\nI will be more than happy to join!``` \n ▸ [**Invite link**](https://scordbot.ml/invite "Click here to invite me!") \n\n ▸ [**Alternate invite link**](https://dsc.gg/scord "Click here to invite me!")')
 			.setFooter(`Requested By ${message.author.username}  •  ©️ Scord`, message.author.avatarURL({ format: 'png', size: 1024, dynamic: true }))
-			.setColor('#2f3136')
+			.setColor('#2f3136');
 
 		message.channel.send(inviteembed);
 

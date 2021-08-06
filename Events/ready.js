@@ -10,7 +10,7 @@ module.exports = {
 
 	name: 'ready',
 	once: true,
-	
+
 	execute(client) {
 
 		console.log(Chalk.green('▸') + Chalk.hex('#7289da')(` ${client.user.username}`) + Chalk.hex('#fee75c')(' is ready') + Chalk.red('!'));

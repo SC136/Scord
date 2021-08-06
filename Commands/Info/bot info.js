@@ -16,6 +16,7 @@ module.exports = {
 
 		let Botembed = new Discord.MessageEmbed()
 
+			.setAuthor(client.name, client.avatar, client.url)
 			.setTitle('`Bot info command`')
 			.setDescription(`\`\`\`apache\nHere is some info about me!\nso you can know more about me!\`\`\``)
 			.addField('Name ▸', `\`\`\`${client.user.username}\`\`\``, true)

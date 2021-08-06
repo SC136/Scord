@@ -44,7 +44,7 @@ module.exports = {
       //let time = `${minutes}:${seconds}`;
 
       const card = new Canvacord.Spotify()
-      
+
         .setAuthor(artist)
         .setAlbum(album)
         .setStartTimestamp(status.timestamps.start)
@@ -58,7 +58,7 @@ module.exports = {
 
           const Spotifyembed = new Discord.MessageEmbed()
 
-            .setAuthor(client.user.username, client.user.avatarURL({ type: 'png', size: 1024 }), Utility.url)
+            .setAuthor(client.name, client.avatar, client.url)
             .setTitle('<:SpotifyIcon:844609218627764234> `Spotify command`')
             .setThumbnail(image)
             .setDescription('```Here is some info about the song you/someone is listening!```')

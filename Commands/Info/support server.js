@@ -10,12 +10,14 @@ module.exports = {
 	execute(client, message) {
 
 		const serverembed = new Discord.MessageEmbed()
+
+			.setAuthor(client.name, client.avatar, client.url)
 			.setTitle('`Support server command`')
 			.setDescription('```apache\nHere is the link to my support server!\nSo if you have any problems using me then u can join!\nYou will get help there for sure!```\n▸ [**Support server invite link**](https://discord.gg/UVWjuAh "Click here to join my support server!")')
 			.setFooter(`Requested By ${message.member.displayName} | ©️ Scord`)
-			.setColor(client.color)
+			.setColor(client.color);
 
 		message.channel.send(serverembed);
 	},
-	
+
 };

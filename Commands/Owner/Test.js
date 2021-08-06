@@ -1,7 +1,7 @@
 const bruh = require('../../Utilities/Error.js');
 
 module.exports = {
-	
+
 	name: 'test',
 	description: 'for testing purposes...',
 	ownerOnly: true,

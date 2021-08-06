@@ -19,7 +19,7 @@ module.exports = {
 
 			const memeembed = new Discord.MessageEmbed()
 
-				.setAuthor(Client.user.username, Client.user.avatarURL({ type: 'png', size: 1024 }), 'https://scord.ml')
+				.setAuthor(Client.name, Client.avatar, Client.url)
 				.setTitle('`Meme command`')
 				.setDescription(`\`\`\`Here is a nice meme for you :)\`\`\`\n**[${Res.title}](${Res.postLink})**`)
 				.setImage(Res.url)
@@ -33,7 +33,7 @@ module.exports = {
 
 			Message.reply(Client.error.send('There was an error, please try again later : ('));
 
-		}
+		};
 
 	},
 

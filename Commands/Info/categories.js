@@ -47,12 +47,13 @@ module.exports = {
 
       const embed = new client.discord.MessageEmbed()
 
-          .setTitle('`Here are all my categories of commands`')
-          .setDescription(`\`\`\`js\nUse '${prefix}cate' followed by a category name to get all the commands inside that category\n\nFor example ▸ '${prefix}cate info'\`\`\``)
-          .addFields(categories)
-          .setFooter(`Requested By ${message.author.username}  •  ©️ Scord`, message.author.avatarURL({ format: 'png', size: 1024, dynamic: true }))
-          .setColor(client.color)
-          .setTimestamp();
+        .setAuthor(client.name, client.avatar, client.url)
+        .setTitle('`Here are all my categories of commands`')
+        .setDescription(`\`\`\`js\nUse '${prefix}cate' followed by a category name to get all the commands inside that category\n\nFor example ▸ '${prefix}cate info'\`\`\``)
+        .addFields(categories)
+        .setFooter(`Requested By ${message.author.username}  •  ©️ Scord`, message.author.avatarURL({ format: 'png', size: 1024, dynamic: true }))
+        .setColor(client.color)
+        .setTimestamp();
 
       return message.channel.send(embed);
 

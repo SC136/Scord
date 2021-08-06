@@ -46,5 +46,5 @@ module.exports = {
 		message.channel.send(ProfileEmbed);
 
 	},
-	
+
 };

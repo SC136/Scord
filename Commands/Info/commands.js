@@ -60,7 +60,7 @@ module.exports = {
       });
 
       const embed = new MessageEmbed()
-        .setAuthor(client.user.username, client.user.avatarURL({ type: 'png', size: 1024 }), Utility.url)
+        .setAuthor(client.name, client.avatar, client.url)
         .setTitle('`Here are all my commands`')
         .addFields(categories)
         .setDescription(`\`\`\`Use '${prefix}cmd' followed by a command name to get additional information on a command!\nFor example ▸ '${prefix}cmd ping' *you can also use aliases!\`\`\``)
@@ -90,7 +90,7 @@ module.exports = {
       const CmdCap = Name.charAt(0).toUpperCase() + Name.slice(1);
 
       const embed = new MessageEmbed()
-      
+
         .setTitle(`\`${CmdCap} command details\``)
         .addField(
           "Command ▸",

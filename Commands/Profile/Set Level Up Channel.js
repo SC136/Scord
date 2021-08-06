@@ -33,7 +33,7 @@ module.exports = {
                 Channel: channel.id
             })
         }
-        
+
         message.channel.send(`Level up messages will now be sent in ${channel}`);
 
     },

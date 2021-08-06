@@ -19,7 +19,7 @@ module.exports = {
 		const lb = leaderboard.map(e => `${e.position} - ${e.username}#${e.discriminator}\nLevel ▸ ${e.level}\nXP ▸ ${e.xp.toLocaleString()}`);
 
 		const lbembed = new Discord.MessageEmbed()
-		
+
 			.setTitle('`Leaderboard`')
 			.setDescription(`\`\`\`apache\n${lb.join("\n\n")}\`\`\``)
 			.setFooter(`Requested By ${message.author.username} | ©️ Scord`, client.user.avatarURL())
