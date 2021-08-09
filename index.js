@@ -10,6 +10,8 @@ const Utility = require('./Utilities/utility.json');
 
 const emoji = require('./Utilities/emojis.json');
 
+const Topggautoposter = require('./Functions/Topggautoposter');
+
 const client = new Discord.Client();
 
 client.commands = new Discord.Collection();
@@ -184,5 +186,7 @@ client.on('message', message => {
 		);
 	}
 });
+
+Topggautoposter(client);
 
 client.login(process.env.Scordtoken);

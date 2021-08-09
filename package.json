@@ -21,6 +21,7 @@
     "erela.js": "^2.3.3",
     "moment": "^2.29.1",
     "parse-ms": "^3.0.0",
-    "rgb2hex": "^0.2.5"
+    "rgb2hex": "^0.2.5",
+    "topgg-autoposter": "^2.0.0"
   }
 }
