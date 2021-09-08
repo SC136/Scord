@@ -21,7 +21,7 @@ module.exports = {
 
         let enabled = await GuildSchema.findOne({ Guild: message.guild.id }).exec()
 
-        if (!enabled) return message.reply(`XP/Leveling System is Disabled in this Server ask a Admin or a Mod to Enable it using \`!enable-xp\``)
+        if (!enabled.Leveling) return message.reply(`XP/Leveling System is Disabled in this Server ask a Admin or a Mod to Enable it using \`!enable-xp\``)
 
         const target = message.mentions.members.first() || message.guild.members.cache.find(member => member.user.username.toLowerCase() === args.join(" ").toLowerCase()) || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(member => member.displayName.toLowerCase() === args.join(" ").toLowerCase()) || message.member;
 

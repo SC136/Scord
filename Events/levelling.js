@@ -18,7 +18,7 @@ module.exports = {
 
 		let enabled = await GuildSchema.findOne({ Guild: message.guild.id }).exec()
 
-		if (!enabled) return;
+		if (!enabled.Leveling) return;
 
 		let data = await LevelUpSchema.findOne({ Guild: message.guild.id }).exec()
 
