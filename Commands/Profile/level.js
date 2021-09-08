@@ -11,6 +11,10 @@ module.exports = {
 
 	async execute(client, message, args, member, prefix) {
 
+		let enabled = await GuildSchema.findOne({ Guild: message.guild.id }).exec()
+
+		if (!enabled) return message.reply(`XP/Leveling System is Disabled in this Server Ask A Admin or Mod to Enable It Using \`!enable-xp\``)
+
 		const user = await Levels.fetch(member.user.id, message.guild.id);
 
 		if (!user) return message.reply(client.error.send('This member doesn\'t have ant level'));

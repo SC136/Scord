@@ -6,6 +6,8 @@ const { prefix } = require('../Configurations/Config.json');
 
 const LevelUpSchema = require('../Models/LevelUp');
 
+const GuildSchema = require(`../Models/Guild`);
+
 Levels.setURL(process.env.Scordmongouri);
 
 module.exports = {
@@ -13,6 +15,10 @@ module.exports = {
 	name: 'message',
 
 	async execute(message, client) {
+
+		let enabled = await GuildSchema.findOne({ Guild: message.guild.id }).exec()
+
+		if (!enabled) return;
 
 		let data = await LevelUpSchema.findOne({ Guild: message.guild.id }).exec()
 
