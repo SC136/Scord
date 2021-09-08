@@ -15,7 +15,7 @@ module.exports = {
 
 		let enabled = await GuildSchema.findOne({ Guild: message.guild.id }).exec()
 
-		if (!enabled.Leveling) return message.reply(`XP/Leveling System is Disabled in this Server ask a Admin or a Mod to Enable it using \`!enable-xp\``)
+		if (!enabled || !enabled.Leveling) return message.reply(`XP/Leveling System is Disabled in this Server ask a Admin or a Mod to Enable it using \`!enable-xp\``)
 
 		const user = await Levels.fetch(member.user.id, message.guild.id);
 
