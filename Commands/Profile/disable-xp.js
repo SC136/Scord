@@ -5,6 +5,7 @@ module.exports = {
     name: 'disable-xp',
     aliases: ['off-xp', 'xp-off'],
     description: 'Disable the XP/Leveling System',
+    permissions: 'MANAGE_GUILD',
     guildOnly: true,
 
     async execute(client, message, args) {
