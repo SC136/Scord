@@ -2,6 +2,8 @@ const Levels = require('discord-xp');
 
 const Discord = require('discord.js');
 
+const GuildSchema = require('../../Models/Guild');
+
 module.exports = {
 
 	name: 'level',
