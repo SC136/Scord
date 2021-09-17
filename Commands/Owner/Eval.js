@@ -1,5 +1,9 @@
 const { MessageEmbed } = require('discord.js');
 
+const Kitsu = require('search-kitsu');
+
+const API = new Kitsu();
+
 module.exports = {
 
   name: 'eval',

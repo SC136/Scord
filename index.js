@@ -190,3 +190,4 @@ client.on('message', message => {
 Topggautoposter(client);
 
 client.login(process.env.Scordtoken);
+// client.login(`NzgwNjgyMjAzNzYyOTE3NDA3.X7yo9Q.B6UJ6MdOWMiwiS7G_zV1TIZmOV8`); // For Testing

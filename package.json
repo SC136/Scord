@@ -13,6 +13,7 @@
     "axios": "^0.21.1",
     "bad-words": "^3.0.4",
     "canvacord": "^5.2.0",
+    "canvas": "^2.8.0",
     "chalk": "^4.1.1",
     "color-thief-node": "^1.0.4",
     "discord-xp": "^1.1.14",
@@ -22,6 +23,7 @@
     "moment": "^2.29.1",
     "parse-ms": "^3.0.0",
     "rgb2hex": "^0.2.5",
+    "search-kitsu": "^1.1.6",
     "topgg-autoposter": "^2.0.0"
   }
 }
