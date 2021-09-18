@@ -9,6 +9,8 @@ const Canvacord = require('canvacord');
 
 const Levels = require('discord-xp');
 
+const ProfileSchema = require('../../Models/Profile');
+
 module.exports = {
 
   name: 'profilecard',
@@ -75,6 +77,15 @@ module.exports = {
 
     const shortenedcustomstatus = Canvacord.Util.shorten(customstatus, 30);
 
+    let data = await ProfileSchema.findOne({ User: member.id }).exec()
+    let bio;
+    if (data) {
+      bio = data.Bio;
+    } else {
+      bio = 'Bio not set • Set using `!set-bio`';
+    };
+    const ShortBio = Canvacord.Util.shorten(bio, 30);
+
     const User = await Levels.fetch(member.user.id, message.guild.id, true);
 
     let Level;
@@ -135,15 +146,13 @@ module.exports = {
     ctx.beginPath()
     ctx.font = '33px Sans Serif'
     ctx.fillStyle = '#ffffff'
-    //ctx.textAlign = 'center'
     ctx.fillText(`${member.displayName}#${member.user.discriminator}`, 38, 218, 400)
 
-    // add status
+    // Bio
     ctx.beginPath()
     ctx.font = '25px sans-serif'
     ctx.fillStyle = '#bcbdbf'
-    ctx.fillText(shortenedcustomstatus, 38, 270, 444)
-    //ctx.fillText('Custom status coming soon...', 38, 270, 444)
+    ctx.fillText(ShortBio, 38, 270, 444)
 
     ctx.fillStyle = '#242527';
     ctx.fillRect(0, 305, canvas.width, 1)
