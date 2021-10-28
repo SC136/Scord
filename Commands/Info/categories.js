@@ -21,6 +21,7 @@ module.exports = {
         Moderation: "<:DiscordCertifiedModerator:870285100477214741>",
         Owner: "<:DiscordOwner:870516633226080306>",
         Profile: "<:DiscordPencil:870512370093551666>",
+        Search: "<:DiscordSearch:903263592810446919>",
         Utility: "<:DiscordSettings:870510077134651402>"
 
       };
@@ -121,6 +122,7 @@ module.exports = {
           Moderation: "<:DiscordCertifiedModerator:870285100477214741>",
           Owner: "<:DiscordOwner:870516633226080306>",
           Profile: "<:DiscordPencil:870512370093551666>",
+          Search: "<:DiscordSearch:903263592810446919>",
           Utility: "<:DiscordSettings:870510077134651402>"
 
         };

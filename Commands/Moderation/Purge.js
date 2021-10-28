@@ -24,7 +24,9 @@ module.exports = {
 
 		};
 
-		await message.channel.bulkDelete(Amount)
+		const AmountToDel = Amount + 1;
+
+		await message.channel.bulkDelete(AmountToDel)
 			.catch(() => message.reply(client.error.send('I was unable to delete the messages!')));
 
 		let amount;
