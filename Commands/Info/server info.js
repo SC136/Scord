@@ -71,6 +71,8 @@ module.exports = {
       .addField(`${Emoji.voice} AFK channel ▸`, (message.guild.afkChannel) ? `${message.guild.afkChannel}` : '```None```', true)
       .addField(`${Emoji.timer} AFK timeout`, (message.guild.afkChannel) ? `\`\`\`${Moment.duration(message.guild.afkTimeout * 1000).asMinutes()} Minutes\`\`\`` : '```None```', true)
       .addField(`${Emoji.ping} Default notifications ▸`, notifications[message.guild.defaultMessageNotifications], true)
+      .addField(`Server Icon ▸`, `​`)
+      .setImage(server.iconURL({ format: `png`, size: 128, dynamic: true }))
       .setFooter(`Requested By ${member.displayName}  •  ©️ Scord`, member.user.avatarURL({ format: 'png', size: 1024, dynamic: true }))
       .setColor(client.color)
       .setTimestamp();
