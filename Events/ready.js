@@ -19,18 +19,18 @@ module.exports = {
 
 		const user = client.user;
 
-		logchannel.send(
+		// logchannel.send(
 
-			new Discord.MessageEmbed()
+		// 	new Discord.MessageEmbed()
 
-				.setAuthor(user.username, user.avatarURL({ type: 'png', size: 1024 }), Utility.url)
-				.setTitle('`Ready!`')
-				.setDescription('```I am ready!```')
-				.addField('Servers ▸', `\`\`\`${client.guilds.cache.size}\`\`\``)
-				.addField('Users ▸', `\`\`\`${client.users.cache.size}\`\`\``)
-				.setFooter('Restart log')
-				.setColor(client.color)
+		// 		.setAuthor(user.username, user.avatarURL({ type: 'png', size: 1024 }), Utility.url)
+		// 		.setTitle('`Ready!`')
+		// 		.setDescription('```I am ready!```')
+		// 		.addField('Servers ▸', `\`\`\`${client.guilds.cache.size}\`\`\``)
+		// 		.addField('Users ▸', `\`\`\`${client.users.cache.size}\`\`\``)
+		// 		.setFooter('Restart log')
+		// 		.setColor(client.color)
 
-		);
+		// );
 	},
 };
